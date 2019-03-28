@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Jquery + html 5 + canvas实现图片上传</title>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/h5Upload.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/h5Upload.css">
+</head>
+
+<body>
+<!--
+<div class="upbox3">
+    <div class="options">
+        <a class="btn-del">删除</a>
+        <a class="btn-big">放大</a>
+    </div>
+   <img src="https://img.alicdn.com/imgextra/i1/2454021808/TB2IPQAXeYCK1JjSZFmXXbCyVXa_!!2454021808-0-beehive-scenes.jpg_180x180q90.jpg_.webp" />
+    <a href="javascript:;" class="h5u_file">
+        <input type="file" accept="image/*">+上传附件
+    </a>
+    <p class="a-behind">单位证件</p>
+    </div>
+    
+-->
+<style>
+    .section{height:200px;}
+    </style>
+<section class="section">  
+    <div id="box"></div>     
+</section> 
+
+<div class="content">
+    <h2>营业执照</h2>
+    <div id="box2"></div>
+    </div>
+<script type="text/javascript">  
+    $('#box').aiiUpload({  
+        action:'upload.php',  
+        max_w:800,  
+        max_h:1000, 
+        subText:'单位证件',  
+        formIdName:'id_card', //表字段名称
+        //fileText:'选择图片'  
+    });  
+    
+    $('#box2').aiiUpload({  
+        action:'upload.php',  //后台接收图片地址
+        max_w:800,   //压缩图片的最大宽度，低于此宽度不会被压缩
+        max_h:1000,  //压缩图片的最大高度，低于此高度的图片不会被压缩
+        subText:'营业执照',  //上传控件上显示的上传标签名称
+        formIdName:'id_card2', //表字段名称
+        //fileText:'选择图片'  
+    });  
+</script>  
+</body>
+</html>
